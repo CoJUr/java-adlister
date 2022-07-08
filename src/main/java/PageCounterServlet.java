@@ -16,6 +16,15 @@ public class PageCounterServlet extends HttpServlet {
 //        super.doGet(req, resp);
         PrintWriter out = resp.getWriter();
 
+        String secretWord = req.getParameter("password");
+
+
+
+        if (req.getParameter("password") == null) {
+//            resp.sendRedirect("/count");
+            pageCount = 0;
+        }
+
         pageCount+= 1;
         out.println("<h1> Page visits so far: " + pageCount + "</h1>");
     }
