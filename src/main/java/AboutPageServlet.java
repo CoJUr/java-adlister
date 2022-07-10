@@ -5,7 +5,7 @@
 //import javax.servlet.http.HttpServletResponse;
 //import java.io.IOException;
 //
-//@WebServlet("/about")
+//@WebServlet("/about2")
 //public class AboutPageServlet extends HttpServlet {
 //
 //    @Override
