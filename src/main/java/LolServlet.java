@@ -5,16 +5,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/profile")
-public class ProfileServlet extends HttpServlet {
+@WebServlet("/lol")
+public class LolServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        req.getRequestDispatcher("profile.jsp").forward(req, resp);
-
-
+//
+        req.getRequestDispatcher("/lol.jsp").forward(req, resp);
     }
-
-
 }

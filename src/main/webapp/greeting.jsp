@@ -1,8 +1,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: cojur
-  Date: 7/8/22
-  Time: 4:06 PM
+  Date: 7/11/22
+  Time: 9:29 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<h1>Profile.jsp here</h1>
+<h1>Howdy, ${name}</h1>
 
 </body>
 </html>

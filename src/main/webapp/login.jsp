@@ -12,5 +12,14 @@
 </head>
 <body>
 
+<h1>Fill out this login form!</h1>
+
+<form action="/login" method="POST">
+    <label for="username" method="">Username</label>
+    <input id="username" type="text" name="username" placeholder="enter username">
+    <label for="password" method="">Pssword</label>
+    <input id="password" type="text" name="password" placeholder="enter password">
+    <button>Submit</button>
+</form>
 </body>
 </html>
