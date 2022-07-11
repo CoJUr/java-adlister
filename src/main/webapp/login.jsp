@@ -20,6 +20,8 @@
     <label for="password" method="">Pssword</label>
     <input id="password" type="text" name="password" placeholder="enter password">
     <button>Submit</button>
+
+    <%@include file="partials/navbar.jsp" %>
 </form>
 </body>
 </html>
