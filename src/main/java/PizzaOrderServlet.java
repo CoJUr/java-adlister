@@ -21,18 +21,24 @@ public class PizzaOrderServlet extends HttpServlet {
         String crustType = req.getParameter("pizza-crust");
         String saucePreference = req.getParameter("pizza-sauce");
         String sizePreference = req.getParameter("pizza-size");
-        String veggiesPreference = req.getParameter("toppingveggies");
+//        String veggiesPreference = req.getParameter("toppingveggies");
         String address = req.getParameter("address");
 
-            List<String> choices = new ArrayList<>();
-                choices.add(crustType);
-                choices.add(saucePreference);
-                choices.add(sizePreference);
+        String[] toppings = req.getParameterValues("topping");
+
+//        List<String> choices = new ArrayList<>();
+//                choices.add(crustType);
+//                choices.add(saucePreference);
+//                choices.add(sizePreference);
+
+        for (String topping: toppings) {
+            System.out.println("Topping = " + topping);
+        }
 
         System.out.println(sizePreference);
         System.out.println(saucePreference);
         System.out.println(crustType);
-        System.out.println(veggiesPreference);
+//        System.out.println(veggiesPreference);
         System.out.println(address);
 
         req.setAttribute("address", address);

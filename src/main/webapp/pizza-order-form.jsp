@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="/partials/navbar.jsp"%>
 <html>
 <head>
     <title>Order form</title>
@@ -40,11 +41,11 @@
 
         <fieldset>
             <legend>Choose your toppings</legend>
-        <input type="checkbox" id="toppingmeat" name="toppingmeat" value="meat">
+        <input type="checkbox" id="toppingmeat" name="topping" value="meat">
         <label for="toppingmeat"> Meat </label><br>
-        <input type="checkbox" id="toppingcheese" name="toppingcheese" value="cheese">
+        <input type="checkbox" id="toppingcheese" name="topping" value="cheese">
         <label for="toppingcheese"> Cheese </label><br>
-        <input type="checkbox" id="toppingveggies" name="toppingveggies" value="veggies">
+        <input type="checkbox" id="toppingveggies" name="topping" value="veggies">
         <label for="toppingveggies"> Veggies </label><br><br>
         </fieldset>
     <br><br>
