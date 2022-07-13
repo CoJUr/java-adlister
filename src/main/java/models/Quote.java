@@ -2,6 +2,8 @@ package models;
 
 import java.io.Serializable;
 
+
+
 public class Quote implements Serializable {
 
     private int id;
