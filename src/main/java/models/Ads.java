@@ -8,4 +8,6 @@ public interface Ads {
 
     void insert(Ad ad);
 
+    public void create(Ad ad);
+
 }

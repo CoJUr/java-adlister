@@ -24,10 +24,23 @@ public class AdsControllerServlet extends HttpServlet {
         req.setAttribute("ads", adsList);
 
         RequestDispatcher view = req.getRequestDispatcher("/ads/index.jsp");
-
         view.forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Ads adsDao = DaoFactory.getAdsDao();
+
+        String name = req.getParameter("name");
+        double price = Double.parseDouble(req.getParameter("price"));
 
 
+        Ad ad = new Ad("test", 45);
+
+
+        adsDao.all();
+
+
+    }
 }

@@ -19,5 +19,8 @@ public class AdsDao implements Ads {
 
     }
 
+    public void create(Ad ad) {
+        ads.add((Ads) ad);
+    }
 
 }
