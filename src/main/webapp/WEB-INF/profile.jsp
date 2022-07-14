@@ -11,6 +11,7 @@
     <div class="container">
         <h1>Welcome!</h1>
         <h3>Viewing your profile.</h3>
+        <p>Username: ${user}</p>
     </div>
 
 </body>
