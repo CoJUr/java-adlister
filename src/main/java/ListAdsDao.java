@@ -1,8 +1,33 @@
+//import com.mysql.cj.jdbc.Driver;
+//
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.SQLException;
 //import java.util.ArrayList;
 //import java.util.List;
 //
 //public class ListAdsDao implements Ads {
+//    private Connection connection;
 //    private List<Ad> ads;
+//
+//
+//    public ListAdsDao(Config config) {
+//        try{
+//            DriverManager.registerDriver(new Driver());
+//            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error connecting db from ListAdsDao", e);
+//        }
+//    }
+//    public ListAdsDao() {
+//        try{
+//            DriverManager.registerDriver(new Driver());
+//            Config config = new Config();
+//            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error connecting db from ListAdsDao", e);
+//        }
+//    }
 //
 //    public List<Ad> all() {
 //        if (ads == null) {

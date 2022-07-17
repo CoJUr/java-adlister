@@ -8,7 +8,15 @@ public class UsersDao implements Users{
 
     private Connection connection;
 
-    public UsersDao() {
+    public UsersDao(Config config) {
+        try {
+            DriverManager.registerDriver(new Driver());
+//            Config config = new Config();
+            connection = DriverManager.getConnection(config.getUrl(),config.getUser(), config.getPassword());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error while connecting to DB: " + e);
+        }
+    }public UsersDao() {
         try {
             DriverManager.registerDriver(new Driver());
             Config config = new Config();

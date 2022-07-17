@@ -17,6 +17,15 @@ public class AdsDao implements Ads{
             throw new RuntimeException("Error from AdsDao while connecting DB: " + e);
         }
     }
+    public AdsDao(Config config) {
+        try{
+            DriverManager.registerDriver(new Driver());
+//            Config config = new Config();
+            connection = DriverManager.getConnection(config.getUrl(),config.getUser(), config.getPassword());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error from AdsDao while connecting DB: " + e);
+        }
+    }
 
     @Override
     public List<Ad> all() {

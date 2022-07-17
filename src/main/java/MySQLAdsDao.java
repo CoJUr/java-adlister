@@ -20,16 +20,23 @@ public class MySQLAdsDao implements Ads{
     }
 
 
-    public MySQLAdsDao() {
-    }
+//    public MySQLAdsDao() {
+//    }
 
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/codeup_test_db" +
-                            "?allowPublicKeyRetrieval=true&useSSL=false",
-                    "root",
-                    "codeup");
+            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
+        } catch (SQLException e) {
+//            throw new RuntimeException("Error connecting to the db", e);
+            System.out.println("Error while connecting to db: " + e);
+        }
+    }
+    public MySQLAdsDao() {
+        try {
+            DriverManager.registerDriver(new Driver());
+            Config config = new Config();
+            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
         } catch (SQLException e) {
 //            throw new RuntimeException("Error connecting to the db", e);
             System.out.println("Error while connecting to db: " + e);

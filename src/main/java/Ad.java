@@ -21,6 +21,8 @@ public class Ad implements Serializable {
         this.description = description;
     }
 
+//    public Ad(int id, int i, String super_nintendo, String description) {
+//    }
 
 
     public long getId() {
