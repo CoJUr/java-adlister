@@ -61,8 +61,12 @@ public class AdsDao implements Ads{
     @Override
     public Long insert(Ad ad) {
 
+        long id = ad.getId();
+        long user_id = ad.getUser_id();
         String title = ad.getTitle();
-        String query = "INSERT INTO adlister_db.ads (title) VALUES ('" + title + "')";
+        String description = ad.getDescription();
+        String query = "INSERT INTO adlister_db.ads (id, user_id, title, description)" +
+                " VALUES ('" + user_id + "', '" + user_id + "', '" +title +  "', '" + description +"')";
 
         try {
             Statement statement = connection.createStatement();
@@ -71,7 +75,8 @@ public class AdsDao implements Ads{
             rs.next();
 
             long key = rs.getLong(1);
-            System.out.println("New insert key is : " + key);
+
+            System.out.println("New insert key : " + key);
         } catch (SQLException e) {
             throw new RuntimeException("error connecting to DB from AdsDao insert()", e);
         }

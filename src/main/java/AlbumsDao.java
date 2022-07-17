@@ -11,10 +11,10 @@ public class AlbumsDao implements Albums{
     public AlbumsDao() {
     try {
         DriverManager.registerDriver(new Driver());
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/codeup_test_db" +
-                        "?allowPublicKeyRetrieval=true&useSSL=false",
-                "root",
-                "codeup");
+        Config config = new Config();
+        connection = DriverManager.getConnection(config.getUrl(),
+                config.getUser(),
+                config.getPassword());
     } catch (SQLException e) {
         throw new RuntimeException("Error connecting to the db", e);
     }
@@ -26,10 +26,10 @@ public class AlbumsDao implements Albums{
 
         try{
             Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery("SELECT * FROM airbnb_db.Rooms");
+            ResultSet rs = statement.executeQuery("SELECT * FROM codeup_test_db.albums");
 
             while (rs.next()) {
-                Album album = new Album(rs.getLong("id"), rs.getString("street"), rs.getInt("owner_id"));
+                Album album = new Album(rs.getLong("id"), rs.getString("artist"), rs.getString("name"));
                 albums.add(album);
             }
 

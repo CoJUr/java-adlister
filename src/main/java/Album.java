@@ -3,16 +3,18 @@ import java.io.Serializable;
 public class Album implements Serializable {
 
     private long id;
-    private String street;
-    private int owner_id;
+    private String artist;
+    private String name;
+
 
     public Album() {}
 
-    public Album(long id, String street, int owner_id) {
+    public Album(long id, String artist, String name) {
         this.id = id;
-        this.street = street;
-        this.owner_id = owner_id;
+        this.artist = artist;
+        this.name = name;
     }
+
 
     public long getId() {
         return id;
@@ -22,19 +24,19 @@ public class Album implements Serializable {
         this.id = id;
     }
 
-    public String getStreet() {
-        return street;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
-    public int getOwner_id() {
-        return owner_id;
+    public String getName() {
+        return name;
     }
 
-    public void setOwner_id(int owner_id) {
-        this.owner_id = owner_id;
+    public void setName(String name) {
+        this.name = name;
     }
 }

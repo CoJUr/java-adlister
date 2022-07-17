@@ -2,6 +2,25 @@ import java.io.Serializable;
 
 public class Ad implements Serializable {
     private long id;
+
+    private long user_id;
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
+
+    public Ad(long id, long user_id, User user, String title, String description) {
+        this.id = id;
+        this.user_id = user_id;
+        this.user = user;
+        this.title = title;
+        this.description = description;
+    }
+
     private User user;
     private String title;
     private String description;
