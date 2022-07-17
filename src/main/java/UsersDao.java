@@ -41,4 +41,19 @@ public class UsersDao implements Users{
     public void insert(User user) {
 
     }
+
+    @Override
+    public User getUserById(long id) {
+        User user = null;
+        try{
+            Statement statement = connection.createStatement();
+            ResultSet rs = statement.executeQuery("SELECT * FROM adlister_db.users WHERE id='" + id + "'");
+            rs.next();
+//            only getting 1 match, no need to loop, just move to the 1st item
+            user = new User(rs.getLong("id"), rs.getString("username"));
+        } catch (SQLException e) {
+            throw new RuntimeException("Exception connecting to db from getUserById", e);
+        }
+        return user;
+    }
 }

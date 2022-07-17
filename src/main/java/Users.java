@@ -8,4 +8,5 @@ public interface Users {
 //    ^might want to return long later ...
 
 
+    User getUserById(long Id);
 }
