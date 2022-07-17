@@ -32,7 +32,12 @@ public class AdsDao implements Ads{
             while (rs.next()) {
                 long user_id = rs.getLong("user_id");
                 User adUser = null;
-                Ad ad = new Ad(rs.getLong("id"), rs.getLong("user_id"),
+                for (User user: users) {
+                    if (user.getId() == user_id) {
+                        adUser = user;
+                    }
+                }
+                Ad ad = new Ad(rs.getLong("id"), adUser,
                         rs.getString("title"), rs.getString("description")
                 );
                 ads.add(ad);
