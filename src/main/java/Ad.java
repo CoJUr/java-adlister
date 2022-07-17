@@ -1,21 +1,27 @@
-public class Ad {
+import java.io.Serializable;
+
+public class Ad implements Serializable {
     private long id;
-    private long userId;
+    private User user;
     private String title;
     private String description;
 
-    public Ad(long id, long userId, String title, String description) {
+    public Ad() {}
+
+    public Ad(long id, User user, String title, String description) {
         this.id = id;
-        this.userId = userId;
+        this.user = user;
         this.title = title;
         this.description = description;
     }
 
-    public Ad(long userId, String title, String description) {
-        this.userId = userId;
+    public Ad(User user, String title, String description) {
+        this.user = user;
         this.title = title;
         this.description = description;
     }
+
+
 
     public long getId() {
         return id;
@@ -25,12 +31,12 @@ public class Ad {
         this.id = id;
     }
 
-    public long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getTitle() {

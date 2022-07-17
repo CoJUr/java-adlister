@@ -21,3 +21,10 @@ CREATE TABLE ads(
                         FOREIGN KEY(user_id) REFERENCES users(id)
 );
 
+INSERT INTO users(id, username, email, password)
+VALUES(1, 'nametest', 'an email', 'abcd');
+
+INSERT INTO ads(id, user_id, title, description)
+VALUES(1, 1, 'TITLE', 'DESCR');
+
+SELECT * FROM ads;

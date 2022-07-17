@@ -31,7 +31,8 @@ public class MySQLAdsDao implements Ads{
                     "root",
                     "codeup");
         } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the db", e);
+//            throw new RuntimeException("Error connecting to the db", e);
+            System.out.println("Error while connecting to db: " + e);
         }
     }
 

@@ -56,7 +56,7 @@ public class AuthorsDao implements Authors{
             long key = rs.getLong(1);
             System.out.println("New insert key is : " + key);
         }catch (SQLException e) {
-            throw new RuntimeException("Error connecting to db", e)
+            throw new RuntimeException("Error connecting to db", e);
         }
 
     }
