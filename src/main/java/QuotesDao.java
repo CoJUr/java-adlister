@@ -19,6 +19,7 @@ public class QuotesDao implements Quotes{
             throw new RuntimeException(e);
         }
     }
+
     public QuotesDao() {
         try {
             DriverManager.registerDriver(new Driver());

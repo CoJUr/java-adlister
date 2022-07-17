@@ -60,6 +60,22 @@ public class AdsDao implements Ads{
 
     @Override
     public Long insert(Ad ad) {
+
+        String title = ad.getTitle();
+        String query = "INSERT INTO adlister_db.ads (title) VALUES ('" + title + "')";
+
+        try {
+            Statement statement = connection.createStatement();
+            statement.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = statement.getGeneratedKeys();
+            rs.next();
+
+            long key = rs.getLong(1);
+            System.out.println("New insert key is : " + key);
+        } catch (SQLException e) {
+            throw new RuntimeException("error connecting to DB from AdsDao insert()", e);
+        }
+
         return null;
     }
 }

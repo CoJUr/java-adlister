@@ -11,7 +11,7 @@ public class AdsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Ads adsDao = new AdsDao();
+        Ads adsDao = DaoFactory.getAdsDao();
         List<Ad> ads = adsDao.all();
 
         req.setAttribute("ads", ads);
@@ -20,7 +20,9 @@ public class AdsServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        String title = req.getParameter("title");
+        Ads adsDao = DaoFactory.getAdsDao();
+//        adsDao.insert(new Ad(0, title));
 
     }
 }

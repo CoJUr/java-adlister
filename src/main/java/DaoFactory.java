@@ -6,13 +6,14 @@ public class DaoFactory {
     private static Quotes quotesDao;
     private static Users usersDao;
 
-    private static Ads listAdsDao;
+    private static Ads mySQLAdsDao;
+
 
     private static Config config = new Config();
 
     public static Ads getAdsDao() {
         if (adsDao == null) {
-            adsDao = new ListAdsDao(config);
+            adsDao = new AdsDao(config);
         }
         return adsDao;
     }
@@ -65,13 +66,14 @@ public class DaoFactory {
             quotesDao = new QuotesDao(config);
         }
         return quotesDao;
-
     }
-    public static Ads getListAdsDao() {
-        if (listAdsDao == null) {
-            listAdsDao = new ListAdsDao(config);
+
+
+    public static Ads getMySQLAdsDao() {
+        if (mySQLAdsDao == null) {
+            mySQLAdsDao = new MySQLAdsDao(config);
         }
-        return listAdsDao;
+        return mySQLAdsDao;
 
     }
 
