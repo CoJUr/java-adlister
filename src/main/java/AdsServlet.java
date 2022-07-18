@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static java.lang.System.out;
+
 @WebServlet("/ads")
 public class AdsServlet extends HttpServlet {
 
@@ -23,6 +25,8 @@ public class AdsServlet extends HttpServlet {
         String title = req.getParameter("title");
         Ads adsDao = DaoFactory.getAdsDao();
 //        adsDao.insert(new Ad(0, title));
+
+
 
     }
 }

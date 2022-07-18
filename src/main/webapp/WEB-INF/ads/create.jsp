@@ -20,5 +20,8 @@
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
+
+    <a href="<%= request.getContextPath() %> /ads">View ads</a>
+
 </body>
 </html>

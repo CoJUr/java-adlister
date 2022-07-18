@@ -1,4 +1,4 @@
-<%--
+<%@ page import="static java.lang.System.out" %><%--
   Created by IntelliJ IDEA.
   User: cojur
   Date: 7/16/22
@@ -23,8 +23,15 @@
 <c:forEach var="ad" items="${ads}">
     <h2>
             ${ad.title}
+
+
     </h2>
 </c:forEach>
+<a href="<%= request.getContextPath() %> /ads/create">Create Ads</a>
+<a href="<%= request.getContextPath() %> /User">View Users</a>
+
+<%--<jsp:include page="/WEB-INF/ads/create.jsp" />--%>
+
 
 </body>
 </html>

@@ -5,7 +5,13 @@ public class Ad implements Serializable {
 
     private long user_id;
 
-    public long getUser_id() {
+    public Ad(int i, String title, String description) {
+        this.id = i;
+        this.title = title;
+        this.description = description;
+    }
+
+    public long getUser_id(int i) {
         return user_id;
     }
 

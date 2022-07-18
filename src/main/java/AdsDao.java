@@ -62,7 +62,7 @@ public class AdsDao implements Ads{
     public Long insert(Ad ad) {
 
         long id = ad.getId();
-        long user_id = ad.getUser_id();
+        long user_id = ad.getUser_id(1);
         String title = ad.getTitle();
         String description = ad.getDescription();
         String query = "INSERT INTO adlister_db.ads (id, user_id, title, description)" +

@@ -18,6 +18,7 @@ public class UsersServlet extends HttpServlet {
 //        pass the list to the view for displaying the results
         req.setAttribute("users", users);
         req.getRequestDispatcher("/WEB-INF/users.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/WEB-INF/forward.jsp").forward(req, resp);
 
     }
 }
