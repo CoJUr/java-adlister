@@ -33,8 +33,11 @@ public class RegisterServlet extends HttpServlet {
             return;
         }
 
-        if (Objects.equals(username, "") || Objects.equals(email, "") || Objects.equals(password, ""))
+        if (Objects.equals(username, "") || Objects.equals(email, "") || Objects.equals(password, "")){
             response.sendRedirect("/register");
+            return;
+        }
+
 
 
 
@@ -42,6 +45,6 @@ public class RegisterServlet extends HttpServlet {
         DaoFactory.getUsersDao().insert(new User(username, email, password));
 
         // TODO: if a user was successfully created, send them to their profile
-
+        response.sendRedirect("/login");
     }
 }
