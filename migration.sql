@@ -21,3 +21,9 @@ CREATE TABLE ads (
         ON DELETE CASCADE
 );
 
+insert into ads (user_id, title, description) VALUES
+                                                  (1, 'PS5 4 sale', 'I need money bad. Not for drugs'),
+                                                    (1, 'Honda accord 4 sale', 'I need money bad. No drug trades'),
+                                                    (1, 'Will clean 4 cash', 'I need money asap. Grandma getting evicted');
+
+insert into users (username, email, password) VALUES('frylock', 'fry@lock.com', 'password');
