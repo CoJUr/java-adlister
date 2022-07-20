@@ -40,10 +40,14 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
+        String query = "INSERT INTO ads(user_id, title, description) VALUES (?), (?), (?)";
         try {
-            Statement stmt = connection.createStatement();
-            stmt.executeUpdate(createInsertQuery(ad), Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = stmt.getGeneratedKeys();
+            PreparedStatement preppedStmt = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
+            preppedStmt.setLong(1, ad.getUserId());
+            preppedStmt.setString(2, ad.getTitle());
+            preppedStmt.setString(3, ad.getDescription());
+            preppedStmt.executeUpdate();
+            ResultSet rs = preppedStmt.getGeneratedKeys();
             rs.next();
             return rs.getLong(1);
         } catch (SQLException e) {
@@ -52,10 +56,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     private String createInsertQuery(Ad ad) {
-        return "INSERT INTO ads(user_id, title, description) VALUES "
-            + "(" + ad.getUserId() + ", "
-            + "'" + ad.getTitle() +"', "
-            + "'" + ad.getDescription() + "')";
+        return "INSERT INTO ads(user_id, title, description) VALUES (?), (?), (?)";
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
