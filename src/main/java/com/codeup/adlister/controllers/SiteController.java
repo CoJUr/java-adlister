@@ -2,10 +2,7 @@ package com.codeup.adlister.controllers;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/SiteController")
@@ -32,10 +29,13 @@ public class SiteController extends HttpServlet {
 
             HttpSession newSession = req.getSession(true);
             newSession.setMaxInactiveInterval(30000);
+            Cookie cUsername = new Cookie("username", username);
+//           new that its created, add the cookie
+            resp.addCookie(cUsername);
             resp.sendRedirect("/profile");
         } else {
             //username and pass incorrect path
-            resp.sendRedirect("/register");
+            resp.sendRedirect("/login");
         }
     }
 }
