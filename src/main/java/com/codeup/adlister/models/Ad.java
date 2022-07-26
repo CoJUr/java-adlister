@@ -5,6 +5,15 @@ public class Ad {
     private long userId;
     private String title;
     private String description;
+    private double priceInCents;
+
+    public Ad(long id, long userId, String title, String description, double priceInCents) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.priceInCents = priceInCents;
+    }
 
     public Ad(long id, long userId, String title, String description) {
         this.id = id;
@@ -49,5 +58,11 @@ public class Ad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static void main(String[] args) {
+        Ad ad = new Ad(8, 3, "test", "yest", 9000);
+
+
     }
 }
